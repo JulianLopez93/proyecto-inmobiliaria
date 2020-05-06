@@ -1,0 +1,21 @@
+<nav>
+    <strong *ngIf="userLogged"> 
+      {{userName}}
+    </strong>
+    <div class="nav-wrapper">
+        <a routerLink="/home" class="brand-logo" class="left">Hogar Colombia</a>
+        <a href="#" data-target="mobile-Inmu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            <li *ngIf="!userLogged"><a routerLink="/security/login">Ingresar</a></li>
+            <li *ngIf="userLogged"><a routerLink="/security/logout">Salir</a></li>
+            <li *ngIf="!userLogged"><a routerLink="/cliente/registro">Registrarse</a> </li>
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-Inmu">
+    <li *ngIf="!userLogged"><a routerLink="/security/login">Ingresar</a></li>
+    <li *ngIf="userLogged"><a routerLink="/security/logout">Salir</a></li>
+    <li *ngIf="!userLogged"><a routerLink="/cliente/registro">Registrarse</a> </li>
+</ul>

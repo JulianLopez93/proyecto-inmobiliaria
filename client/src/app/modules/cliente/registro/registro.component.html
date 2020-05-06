@@ -1,0 +1,86 @@
+<div class="row" class="body">
+    <fieldset>
+        <legend>Register </legend>
+        <form [formGroup]="formValidator" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="txtfirstName" formControlName="firstName" type="text" class="validate">
+                    <label for="txtfirstName">Nombre </label>
+                    <div class="warning-validation" *ngIf="fv.firstName.errors  && (fv.firstName.dirty || fv.firstName.touched)">
+                        <strong *ngIf="fv.firstName.errors.required">Please, enter name!</strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="txtLastName" formControlName="lastName" type="text" class="validate">
+                    <label for="txtLastName">Apellido </label>
+                    <div class="warning-validation" *ngIf="fv.lastName.errors  && (fv.lastName.dirty || fv.lastName.touched)">
+                        <strong *ngIf="fv.lastName.errors.required">Please, enter last name!</strong>
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">mail_outline</i>
+                    <input id="txtMail" formControlName="email" type="email" class="validate">
+                    <label for="txtMail">email </label>
+                    <div class="warning-validation" *ngIf="fv.email.errors && (fv.email.dirty || fv.email.touched)">
+                        <strong *ngIf="fv.email.errors.required">Please, enter email!</strong>
+
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone_iphone</i>
+                    <input id="txtPhone" formControlName="phone" type="text" class="validate">
+                    <label for="txtPhone">Telefono</label>
+                    <div class="warning-validation" *ngIf="fv.phone.errors  && (fv.phone.dirty || fv.phone.touched)">
+                        <strong *ngIf="fv.phone.errors.required">Please, enter phone!</strong>
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="txtCode" formControlName="password" type="password" class="validate">
+                    <label for="txtCode">contrasena</label>
+                    <div class="warning-validation" *ngIf="fv.password.errors  && (fv.password.dirty || fv.password.touched)">
+                        <strong *ngIf="fv.password.errors.required">Please, enter contrasena!</strong>
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">store_mall_directory</i>
+                    <input id="txtAddress" formControlName="address" type="text" class="validate">
+                    <label for="txtAddress">address </label>
+                    <div class="warning-validation" *ngIf="fv.address.errors && (fv.address.dirty || fv.address.touched)">
+                        <strong *ngIf="fv.address.errors.required">Please, enter address!</strong>
+
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">location_city</i>
+                    <input id="txtCity" formControlName="city" type="text" class="validate">
+                    <label for="txtCity">city </label>
+                    <div class="warning-validation" *ngIf="fv.city.errors && (fv.city.dirty || fv.city.touched)">
+                        <strong *ngIf="fv.city.errors.required">Please, enter city!</strong>
+
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button [disabled]="fv.firstName.errors || fv.lastName.errors
+                     || fv.mail.errors || fv.phone.errors || fv.password.errors 
+                     || fv.address.errors || fv.city.errors" class="btn waves-effect waves-light" type="submit" name="action">Registrar 
+
+                    <i class="material-icons right">send</i>
+                </button>
+                </div>
+            </div>
+        </form>
+
+    </fieldset>
+</div>

@@ -1,0 +1,53 @@
+{
+  "name": "solicitud",
+  "plural": "solicitudes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "idCliente": {
+      "type": "string",
+      "required": true
+    },
+    "idInmueble": {
+      "type": "string",
+      "required": true
+    },
+    "estado": {
+      "type": "string",
+      "required": true
+    },
+    "fecha": {
+      "type": "date",
+      "required": true
+    },
+    "comentarios": {
+      "type": [
+        "string"
+      ]
+    },
+    "idCodeudor": {
+      "type": "string"
+    },
+    "tipoSolicitud": {
+      "type": "string",
+      "required": true
+    },
+    "tipoInmueble": {
+      "type": "string",
+      "required": true
+    },
+    "fotoInmueble": {
+      "type": [
+        "string"
+      ],
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

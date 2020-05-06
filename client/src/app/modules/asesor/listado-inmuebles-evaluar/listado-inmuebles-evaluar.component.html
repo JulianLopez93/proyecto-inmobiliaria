@@ -1,0 +1,82 @@
+<br />
+<a routerLink="/asesor/crearinmueble" class="waves-effect waves-light btn">Crear nuevo</a>
+<br />
+<br />
+
+<table class="responsive-table">
+    <thead>
+        <tr>
+            <th>
+                Código
+            </th>
+            <th>
+                Tipo de Inmueble
+            </th>
+            <th>
+                Ciudad
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Dirección
+            </th>
+            <th>
+                Tipo de Oferta
+            </th>
+            <th>
+                Valor
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let i of listaInmuebles">
+            <td>
+                {{i.codigo}}
+            </td>
+            <td>
+                {{i.tipo}}
+            </td>
+            <td>
+                {{i.ciudad}}
+            </td>
+            <td>
+                {{i.departamento}}
+            </td>
+            <td>
+                {{i.direccion}}
+            </td>
+            <td>
+                {{i.tipooferta}}
+            </td>
+            <td>
+                {{i.valor| currency}}
+            </td>
+            <td>
+                <a routerLink="/asesor/editarinmueble/{{i.id}}" class="waves-effect waves-light btn orange">Editar
+                    <i class="material-icons right">edit</i>
+                </a>
+            </td>
+            <td>
+                <button class="btn waves-effect waves-light red" type="button" name="action"
+                    (click)="openConfirmation(i.id)">Eliminar
+                    <i class="material-icons right">delete</i>
+                </button>
+            </td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<div id="modalConfirmation" class="modal">
+    <div class="modal-content">
+        <h4>Ventana de confirmación</h4>
+        <p>Confirma eliminar este inmueble?</p>
+    </div>
+    <div class="modal-footer">
+        <a class="modal-close waves-effect waves-light btn red">Cancelar</a> &nbsp;
+        <a class="modal-close waves-effect waves-light btn green" (click)="eliminarInmueble(i.codigo)">Confirmar</a>
+    </div>
+</div>
+

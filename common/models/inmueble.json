@@ -1,0 +1,69 @@
+{
+  "name": "inmueble",
+  "plural": "inmuebles",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    
+    "codigo": {
+      "type": "string",
+      "required": true
+    },
+    "ciudad": {
+      "type": "string",
+      "required": true
+    },
+    "departamento": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "valor": {
+      "type":"number",
+      "required": true,
+      "default": 0
+    },
+    
+    "tipo":{
+      "type":"string",
+      "required":true
+    }
+    ,
+    "estadoContrato": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "tipooferta": {
+      "type": "string",
+      "required": true
+    },
+    "idEncargado": {
+      "type": "string",
+      "required": true
+    },
+    "telEncargado": {
+      "type": "string",
+      "required": true
+    },
+    "fotos": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    },
+    "enlaceVideo": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

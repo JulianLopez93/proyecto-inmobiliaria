@@ -1,0 +1,82 @@
+{
+  "name": "usuario",
+  "plural": "usuarios",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "rol": {
+      "type": "string",
+      "required": true
+    },
+    "cedula": {
+      "type": "string",
+      "required": true
+    },
+    "primerNombre": {
+      "type": "string",
+      "required": true
+    },
+
+    "segundoNombre": {
+      "type": "string",
+      "required": true
+    },
+    
+    "primerApellido": {
+      "type": "string",
+      "required": true
+    },
+    "segundoApellido": {
+      "type": "string",
+      "required": true
+    },
+
+    "telefono": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "ciudad": {
+      "type": "string",
+      "required": true
+    },
+    "departamento": {
+      "type": "string",
+      "required": true
+    },
+    "comentario": {
+      "type": [
+        "string"
+      ]
+    },
+    "listaInmuebles": {
+      "type": [
+        "string"
+      ],
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

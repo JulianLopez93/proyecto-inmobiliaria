@@ -1,0 +1,64 @@
+<div class="row" class="body">
+    <fieldset>
+        <legend>Register Asesor</legend>
+        <form [formGroup]="formValidator" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="txtName" formControlName="nombresesor" type="text" class="validate">
+                    <label for="txtName">nombre de asesor</label>
+                    <div class="warning-validation" *ngIf="fv.nombresesor.errors  && (fv.nombresesor.dirty || fv.nombresesortouched)">
+                        <strong *ngIf="fv.nombresesor.errors.required">Please, enter name!</strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="txtCode" formControlName="cedula" type="text" class="validate">
+                    <label for="txtCode">cedula </label>
+                    <div class="warning-validation" *ngIf="fv.cedula.errors && (fv.cedula.dirty || fv.cedula.touched)">
+                        <strong *ngIf="fv.cedula.errors.required">Please, enter document!</strong>
+
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">phone_iphone</i>
+                    <input id="txtCode" formControlName="telefono" type="text" class="validate">
+                    <label for="txtCode">Telefono</label>
+                    <div class="warning-validation" *ngIf="fv.telefono.errors  && (fv.telefono.dirty || fv.telefono.touched)">
+                        <strong *ngIf="fv.telefono.errors.required">Please, enter telefono!</strong>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">mail_outline</i>
+                    <input id="txtName" formControlName="email" type="email" class="validate">
+                    <label for="txtName">email </label>
+                    <div class="warning-validation" *ngIf="fv.email.errors && (fv.email.dirty || fv.email.touched)">
+                        <strong *ngIf="fv.email.errors.required">Please, enter email!</strong>
+
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">lock_outline</i>
+                    <input id="txtCode" formControlName="contrasena" type="password" class="validate">
+                    <label for="txtCode">contrasena</label>
+                    <div class="warning-validation" *ngIf="fv.contrasena.errors  && (fv.contrasena.dirty || fv.contrasena.touched)">
+                        <strong *ngIf="fv.contrasena.errors.required">Please, enter contrasena!</strong>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <button [disabled]="fv.nombresesor.errors || fv.cedula.errors || fv.contrasena.errors" class="btn waves-effect waves-light" type="submit" name="action">Registrar asesor
+
+                    <i class="material-icons right">send</i>
+                </button>
+                </div>
+            </div>
+        </form>
+
+    </fieldset>
+</div>

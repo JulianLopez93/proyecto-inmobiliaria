@@ -1,0 +1,14 @@
+{
+
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "inmobiliariaDB",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "useNewUrlParser": true,
+    "connector": "mongodb"
+  }
+}
