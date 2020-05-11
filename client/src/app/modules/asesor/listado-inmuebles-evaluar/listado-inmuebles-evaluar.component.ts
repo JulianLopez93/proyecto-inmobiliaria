@@ -32,7 +32,7 @@ export class ListadoInmueblesEvaluarComponent implements OnInit {
   }
 
   openConfirmation(code){
-    this.codeToRemove = code;
+    this.codeToRemove = code;  
     openConfirmationModal();
   }
 

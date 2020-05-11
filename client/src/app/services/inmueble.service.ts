@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class InmuebleService {
 
   url:String= "http://localhost:3000/api/inmuebles/";
+  filtro:String = null
 
   constructor(private http: HttpClient) { }
 
@@ -53,6 +54,18 @@ export class InmuebleService {
     return this.http.delete<InmuebleModel>(`${this.url}${inmuebleId}`);
   }
 
+  filtrarInmueblesPorOfertaTipo(tipoOferta:String , tipoInm:String):Observable<InmuebleModel[]>
+  {
+    
+    this.filtro="?filter[where][tipooferta]="+tipoOferta+"&filter[where][tipo]="+tipoInm;
+    
+    return this.http.get<InmuebleModel[]>(`${this.url}${this.filtro}`);
 
+  }
 
 }
+
+
+
+
+

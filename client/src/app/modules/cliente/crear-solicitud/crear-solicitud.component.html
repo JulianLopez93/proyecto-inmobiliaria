@@ -1,1 +1,121 @@
-<p>crear-solicitud works!</p>
+<div class="row" class="body">
+    <fieldset>  
+      <form [formGroup]="formValidator" (ngSubmit)="filtrarInmuebles()" class="col s12">
+          <div class="row">
+                <div class="input-field col s6">
+                    <label>Tipo de oferta</label>
+                    <br>
+                    <br>
+                
+                    <select class="browser-default" id="selTipoOferta" formControlName="tipoSolicitud">
+                    
+                        <option value="" disabled selected>Seleccione el tipo de oferta</option>
+                        <option value="Venta">Venta</option>
+                        <option value="Alquiler">Alquiler</option>
+                  
+                    </select>
+
+                    <div class="warning-validation" *ngIf="fv.tipoSolicitud.errors && (fv.tipoSolicitud.dirty || fv.tipoSolicitud.touched)">
+                        <strong *ngIf="fv.tipoSolicitud.errors.required">Por favor, seleccione el tipo de oferta!</strong>
+                    </div>
+               </div>
+
+              <div class="input-field col s6">
+                    <label>Tipo de inmueble</label>
+                    <br>
+                    <br>
+            
+                    <select class="browser-default" id="selTipoInmueble" formControlName="tipoInmueble">
+                
+                        <option value="" disabled selected>Seleccione el tipo de inmueble</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Finca">Finca</option>
+                        <option value="Quinta">Quinta</option>
+                        <option value="Apartamento">Apartamento</option>
+              
+                    </select>
+
+                    <div class="warning-validation" *ngIf="fv.tipoInmueble.errors && (fv.tipoInmueble.dirty || fv.tipoInmueble.touched)">
+                        <strong *ngIf="fv.tipoInmueble.errors.required">Por favor, seleccione el tipo de inmueble!</strong>
+                    </div>
+             </div>
+
+
+               
+            </div>
+              
+           
+            <div class="row">
+              <div class="col s12">
+                  <button [disabled]="fv.tipoSolicitud.errors || fv.tipoInmueble.errors" class="btn waves-effect waves-light" type="submit"
+                      name="action">Filtrar
+                        <i class="material-icons right">find_in_page</i>
+                  </button>
+              </div>
+            </div>
+
+        </form>
+
+        <form action="escogerInmueble()" [formGroup]="formValidator" class="col s12">
+            <table class="responsive-table" *ngIf="bandera">
+                <thead>
+                    <tr>
+                   
+                        <th>
+                            Código
+                        </th>
+                   
+                        <th>
+                            Ciudad
+                        </th>
+                        <th>
+                            Departamento
+                        </th>
+                        <th>
+                            Dirección
+                        </th>
+                   
+                        <th>
+                            Valor
+                        </th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of listaInmuebles">
+                        
+                       <td>
+                            <p>
+                                <label>
+                                  <input class="with-gap" name="codInmueble" type="radio" formControlName="codInmueble">
+                                    <span>{{i.codigo}}</span>
+                                </label>
+                            </p>
+                        </td>
+                       
+                        <td>
+                            {{i.ciudad}}
+                        </td>
+                        <td>
+                            {{i.departamento}}
+                        </td>
+                        <td>
+                            {{i.direccion}}
+                        </td>
+                     
+                        <td>
+                            {{i.valor| currency}}
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </form> 
+
+        
+  </fieldset>
+
+  
+</div>
