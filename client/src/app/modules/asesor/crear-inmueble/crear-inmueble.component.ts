@@ -28,11 +28,6 @@ export class CrearInmuebleComponent implements OnInit {
     return this.formValidator.controls;
   }
 
-  /*document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, options);
-  });*/
-
   formGenerator() {
     this.formValidator = this.fb.group({
 
@@ -87,21 +82,6 @@ export class CrearInmuebleComponent implements OnInit {
           this.router.navigate(['/asesor/listadoinmueble'])
         
       });
-      
-
-      //let saved = this.inmuebleservice.guardarNuevoInmueble(c);
-      //console.log(saved);
-      /*if (saved == 1) {
-        openPlatformModalMessage("Data stored successfully.");
-        this.router.navigate(['/hotel/list']);
-      } else {
-        if (saved == 2) {
-          openPlatformModalMessage("The hotel with this code already exists.");
-        } else {
-          openPlatformModalMessage("Error storing data.");
-        }
-      }
-      */
     }
   }
 }

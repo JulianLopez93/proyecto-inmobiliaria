@@ -13,6 +13,7 @@ declare var openConfirmationModal: any;
 export class ListadoInmueblesEvaluarComponent implements OnInit {
 
   codeToRemove: String;
+  listaInmuebles:InmuebleModel[]=[];
 
 
 
@@ -22,17 +23,14 @@ export class ListadoInmueblesEvaluarComponent implements OnInit {
     this.obtenerTodosInmuebles();
   }
 
-
-  listaInmuebles:InmuebleModel[]=[];
-
   obtenerTodosInmuebles():void{
     this.inmuService.obtenerTodosInmuebles().subscribe(elementos =>{
       this.listaInmuebles=elementos;
     });
   }
 
-  openConfirmation(code){
-    this.codeToRemove = code;  
+  openConfirmation(){
+     
     openConfirmationModal();
   }
 
@@ -44,8 +42,4 @@ export class ListadoInmueblesEvaluarComponent implements OnInit {
 
     })
   }
-
-
-
-
 }

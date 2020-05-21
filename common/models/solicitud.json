@@ -11,8 +11,8 @@
       "type": "string",
       "required": true
     },
-    "idInmueble": {
-      "type": "string",
+    "inmueble": {
+      "type": "any",
       "required": true
     },
     "estado": {

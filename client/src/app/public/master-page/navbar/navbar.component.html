@@ -9,6 +9,8 @@
             <li *ngIf="!userLogged"><a routerLink="/security/login">Ingresar</a></li>
             <li *ngIf="userLogged"><a routerLink="/security/logout">Salir</a></li>
             <li *ngIf="!userLogged"><a routerLink="/cliente/registro">Registrarse</a> </li>
+            <li *ngIf="!userLogged"><a routerLink="/asesor/listadoinmueble">Inmuebles</a> </li>
+            <li *ngIf="!userLogged"><a routerLink="/cliente/crearsolicitud">Solicitudes</a> </li>
 
         </ul>
     </div>
